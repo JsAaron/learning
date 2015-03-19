@@ -28,6 +28,11 @@ Props<!DOCTYPE html>
 		  onChange: function(e) {
 		    this.setState({text: e.target.value});
 		  },
+
+		  componentDidMount:function(){
+		  	console.log(1)
+		  },
+
 		  handleSubmit: function(e) {
 		    e.preventDefault();
 		    var nextItems = this.state.items.concat([this.state.text]);
