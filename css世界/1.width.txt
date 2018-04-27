@@ -1,0 +1,58 @@
+css中
+盒子：分内在盒子 外在盒子
+显示：分内部显示 外部显示
+尺寸: 分内部尺寸 外部尺寸
+
+元素分为，块级，内联元素
+每个元素都由2个盒子组成，外部盒子+内部盒子
+外部盒子(容器盒子)用来处理一行显示，还是换行显示
+内部盒子用来负责宽高，内容的呈现
+
+例如:display:inline-block  外部是内联盒子，内部也是块级盒子
+所以外部inline级别可以一行显示，内部block级别可以设置宽高
+
+
+width:
+
+div默认是平铺，这是block容器的流动性
+a{
+  display:block
+}
+a默认是inline，设置了block默认就是width:100%
+
+width:auto 默认100%显示是外部尺寸
+
+无宽度，无图片，无尺寸
+1. 外部尺寸的块级元素一旦设置了宽度，流动性就会丢失
+2. 无宽度，少了代码，少了计算，少了维护
+
+内部尺寸：(元素里面没有内容高度为0，就是应用的内部尺寸)
+元素的尺寸是由内部的元素决定，而非外部容器决定
+1.包裹性（包裹与自适应）
+  display:inline-block 里面的内容最大不会溢出容器
+  典型就是：button input  内部文字越多会自动换行
+  button自动换行 input重置white-space:normal
+
+内在盒子
+content-box padding-box border-box margin
+width/heigth是作用在内在盒子上
+
+css2.1 width作用在content-box，div默认padding border margin都是0，所以宽度width=>content-box
+
+宽度分离布局：
+内在盒子有4个元素影响宽度，所以分离宽度到父层，子元素width默认auto自动定宽
+
+box-sizing IE8开始支持-ms-
+box-sizing:content-box 默认
+border-box:作用在border上，width= content+padding+border
+初衷，解决替换元素宽度自适应问题  textarea input
+
+
+
+
+
+
+
+
+
+
